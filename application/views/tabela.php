@@ -125,10 +125,10 @@
 						if (isset($id) && $id == $red->id_korisnik):
 
 							$attributes = array('id' => 'forma_izmena');
-							$nadimak = array('name' => 'tb_nadimak', 'id' => 'tb_nadimak', 'class' => 'tb_forma_polje', 'value' => $red->nadimak);
-							$meil = array('name' => 'tb_meil', 'id' => 'tb_meil', 'class' => 'tb_forma_polje', 'value' => $red->meil);
-							$sifra = array('name' => 'tb_sifra', 'id' => 'tb_sifra', 'class' => 'tb_forma_polje', 'value' => $red->sifra);
-							$id_uloga = array('name' => 'tb_id_uloga', 'id' => 'tb_id_uloga', 'class' => 'tb_forma_polje', 'value' => $red->id_uloga);
+							$nadimak = array('name' => 'nadimak', 'id' => 'nadimak', 'class' => 'tb_forma_polje', 'value' => $red->nadimak, 'form'=>'forma_izmena');
+							$meil = array('name' => 'meil', 'id' => 'meil', 'class' => 'tb_forma_polje', 'value' => $red->meil, 'form'=>'forma_izmena');
+							$sifra = array('name' => 'sifra', 'id' => 'sifra', 'class' => 'tb_forma_polje', 'value' => $red->sifra, 'form'=>'forma_izmena');
+							$id_uloga = array('name' => 'id_uloga', 'id' => 'id_uloga', 'class' => 'tb_forma_polje', 'value' => $red->id_uloga, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_korisnik', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'korisnici', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -138,11 +138,11 @@
 								<td><?php echo form_input($meil); ?></td>
 								<td><?php echo form_input($sifra); ?></td>
 								<td><?php echo form_input($id_uloga); ?></td>
-								<?php if ($red->vreme == NULL) { ?>
+								<?php if ($red->vreme_unosa == NULL) { ?>
 									<td>  </td>
 								<?php } else {
 									?>
-									<td><?php echo date('d-m-Y h:i:s', $red->vreme); ?></td>
+									<td><?php echo date('d-m-Y h:i:s', $red->vreme_unosa); ?></td>
 								<?php } ?>
 								<?php if ($red->id_korisnik == NULL) { ?>
 									<td>  </td>
@@ -170,11 +170,11 @@
 								<td><?php echo $red->meil; ?></td>
 								<td><?php echo $red->sifra; ?></td>
 								<td><?php echo $red->id_uloga; ?></td>
-								<?php if ($red->vreme == NULL) { ?>
+								<?php if ($red->vreme_unosa == NULL) { ?>
 									<td>  </td>
 								<?php } else {
 									?>
-									<td><?php echo date('d-m-Y h:i:s', $red->vreme); ?></td>
+									<td><?php echo date('d-m-Y h:i:s', $red->vreme_unosa); ?></td>
 								<?php } ?>
 								<?php if ($red->id_korisnik == NULL) { ?>
 									<td>  </td>
@@ -198,10 +198,10 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$nadimak = array('name' => 'tb_nadimak', 'id' => 'tb_nadimak', 'class' => 'tb_forma_polje',);
-						$meil = array('name' => 'tb_meil', 'id' => 'tb_meil', 'class' => 'tb_forma_polje',);
-						$sifra = array('name' => 'tb_sifra', 'id' => 'tb_sifra', 'class' => 'tb_forma_polje',);
-						$id_uloga = array('name' => 'tb_id_uloga', 'id' => 'tb_id_uloga', 'class' => 'tb_forma_polje',);
+						$nadimak = array('name' => 'nadimak', 'id' => 'nadimak', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$meil = array('name' => 'meil', 'id' => 'meil', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$sifra = array('name' => 'sifra', 'id' => 'sifra', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$id_uloga = array('name' => 'id_uloga', 'id' => 'id_uloga', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'korisnici', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
@@ -243,8 +243,8 @@
 						if (isset($id) && $id == $red->idAnketa):
 
 							$attributes = array('id' => 'forma_izmena');
-							$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje', 'value' => $red->Naziv);
-							$aktivna = array('name' => 'tb_aktivna', 'id' => 'tb_aktivna', 'class' => 'tb_forma_polje', 'value' => $red->Aktivna);
+							$naziv = array('name' => 'naziv', 'id' => 'naziv', 'class' => 'forma_polje', 'value' => $red->Naziv, 'form'=>'forma_izmena');
+							$aktivna = array('name' => 'aktivna', 'id' => 'aktivna', 'class' => 'tb_forma_polje', 'value' => $red->Aktivna, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'idAnketa', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketa', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -310,8 +310,8 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje',);
-						$aktivna = array('name' => 'tb_aktivna', 'id' => 'tb_aktivna', 'class' => 'tb_forma_polje',);
+						$naziv = array('name' => 'naziv', 'id' => 'naziv', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$aktivna = array('name' => 'aktivna', 'id' => 'aktivna', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketa', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
@@ -352,9 +352,9 @@
 						if (isset($id) && $id == $red->idAnketaOdgovori):
 
 							$attributes = array('id' => 'forma_izmena');
-							$odgovor = array('name' => 'tb_odgovor', 'id' => 'tb_odgovor', 'class' => 'tb_forma_polje', 'value' => $red->Odgovor);
-							$rezultat = array('name' => 'tb_rezultat', 'id' => 'tb_rezultat', 'class' => 'tb_forma_polje', 'value' => $red->Rezultat);
-							$id_anketa = array('name' => 'tb_id_anketa', 'id' => 'tb_id_anketa', 'class' => 'tb_forma_polje', 'value' => $red->idAnketa);
+							$odgovor = array('name' => 'odgovor', 'id' => 'odgovor', 'class' => 'tb_forma_polje', 'value' => $red->Odgovor, 'form'=>'forma_izmena');
+							$rezultat = array('name' => 'rezultat', 'id' => 'rezultat', 'class' => 'tb_forma_polje', 'value' => $red->Rezultat, 'form'=>'forma_izmena');
+							$id_anketa = array('name' => 'idAnketa', 'id' => 'idAnketa', 'class' => 'tb_forma_polje', 'value' => $red->idAnketa, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'idAnketaOdgovori', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketaodgovori', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -422,9 +422,9 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$odgovor = array('name' => 'tb_odgovor', 'id' => 'tb_odgovor', 'class' => 'tb_forma_polje',);
-						$rezultat = array('name' => 'tb_rezultat', 'id' => 'tb_rezultat', 'class' => 'tb_forma_polje',);
-						$id_anketa = array('name' => 'tb_id_anketa', 'id' => 'tb_id_anketa', 'class' => 'tb_forma_polje',);
+						$odgovor = array('name' => 'odgovor', 'id' => 'odgovor', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$rezultat = array('name' => 'rezultat', 'id' => 'rezultat', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$id_anketa = array('name' => 'idAnketa', 'id' => 'idAnketa', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketaodgovori', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
@@ -467,10 +467,10 @@
 						if (isset($id) && $id == $red->id_lika):
 
 							$attributes = array('id' => 'forma_izmena');
-							$ime_lika = array('name' => 'tb_ime_lika', 'id' => 'tb_ime_lika', 'class' => 'tb_forma_polje', 'value' => $red->ime_lika);
-							$slika_lik_pocetna = array('name' => 'tb_slika_lik_pocetna', 'id' => 'tb_slika_lik_pocetna', 'class' => 'tb_forma_polje', 'value' => $red->slika_lik_pocetna);
-							$video = array('name' => 'tb_video', 'id' => 'tb_video', 'class' => 'tb_forma_polje', 'value' => $red->video);
-							$dir_za_smestanje_slika = array('name' => 'tb_dir_za_smestanje_slika', 'id' => 'tb_dir_za_smestanje_slika', 'class' => 'tb_forma_polje', 'value' => $red->dir_za_smestanje_slika);
+							$ime_lika = array('name' => 'ime_lika', 'id' => 'ime_lika', 'class' => 'tb_forma_polje', 'value' => $red->ime_lika, 'form'=>'forma_izmena');
+							$slika_lik_pocetna = array('name' => 'slika_lik_pocetna', 'id' => 'slika_lik_pocetna', 'class' => 'tb_forma_polje', 'value' => $red->slika_lik_pocetna, 'form'=>'forma_izmena');
+							$video = array('name' => 'video', 'id' => 'video', 'class' => 'forma_polje', 'value' => $red->video, 'form'=>'forma_izmena');
+							$dir_za_smestanje_slika = array('name' => 'dir_za_smestanje_slika', 'id' => 'dir_za_smestanje_slika', 'class' => 'tb_forma_polje', 'value' => $red->dir_za_smestanje_slika, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_lika', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'likovi', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -540,10 +540,10 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$ime_lika = array('name' => 'tb_ime_lika', 'id' => 'tb_ime_lika', 'class' => 'tb_forma_polje',);
-						$slika_lik_pocetna = array('name' => 'tb_slika_lik_pocetna', 'id' => 'tb_slika_lik_pocetna', 'class' => 'tb_forma_polje',);
-						$video = array('name' => 'tb_video', 'id' => 'tb_video', 'class' => 'tb_forma_polje',);
-						$dir_za_smestanje_slika = array('name' => 'tb_dir_za_smestanje_slika', 'id' => 'tb_dir_za_smestanje_slika', 'class' => 'tb_forma_polje',);
+						$ime_lika = array('name' => 'ime_lika', 'id' => 'ime_lika', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$slika_lik_pocetna = array('name' => 'slika_lik_pocetna', 'id' => 'slika_lik_pocetna', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$video = array('name' => 'video', 'id' => 'video', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
+						$dir_za_smestanje_slika = array('name' => 'dir_za_smestanje_slika', 'id' => 'dir_za_smestanje_slika', 'class' => 'tb_forma_polje', 'form' => 'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'likovi', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
@@ -586,9 +586,9 @@
 						if (isset($id) && $id == $red->id_meni):
 
 							$attributes = array('id' => 'forma_izmena');
-							$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje', 'value' => $red->naziv);
-							$link = array('name' => 'tb_link', 'id' => 'tb_link', 'class' => 'tb_forma_polje', 'value' => $red->link);
-							$podmeni = array('name' => 'tb_podmeni', 'id' => 'tb_podmeni', 'class' => 'tb_forma_polje', 'value' => $red->podmeni);
+							$naziv = array('name' => 'naziv', 'id' => 'naziv', 'class' => 'forma_polje', 'value' => $red->naziv, 'form'=>'forma_izmena');
+							$link = array('name' => 'link', 'id' => 'link', 'class' => 'tb_forma_polje', 'value' => $red->link, 'form'=>'forma_izmena');
+							$podmeni = array('name' => 'podmeni', 'id' => 'podmeni', 'class' => 'tb_forma_polje', 'value' => $red->podmeni, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_meni', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'meni', 'form'=>'forma_izmena','type'=>'hidden');					
 							echo form_open('', $attributes);
@@ -656,9 +656,9 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje',);
-						$link = array('name' => 'tb_link', 'id' => 'tb_link', 'class' => 'tb_forma_polje',);
-						$podmeni = array('name' => 'tb_podmeni', 'id' => 'tb_podmeni', 'class' => 'tb_forma_polje',);
+						$naziv = array('name' => 'naziv', 'id' => 'naziv', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
+						$link = array('name' => 'link', 'id' => 'link', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
+						$podmeni = array('name' => 'podmeni', 'id' => 'podmeni', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'meni', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
@@ -700,9 +700,9 @@
 						if (isset($id) && $id == $red->id_podmeni):
 
 							$attributes = array('id' => 'forma_izmena');
-							$podmeni_naziv = array('name' => 'tb_podmeni_naziv', 'id' => 'tb_podmeni_naziv', 'class' => 'tb_forma_polje', 'value' => $red->podmeni_naziv);
-							$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje', 'value' => $red->id_lika);
-							$id_meni = array('name' => 'tb_id_meni', 'id' => 'tb_id_meni', 'class' => 'tb_forma_polje', 'value' => $red->id_meni);
+							$podmeni_naziv = array('name' => 'podmeni_naziv', 'id' => 'podmeni_naziv', 'class' => 'tb_forma_polje', 'value' => $red->podmeni_naziv, 'form'=>'forma_izmena');
+							$id_lika = array('name' => 'id_lika', 'id' => 'id_lika', 'class' => 'tb_forma_polje', 'value' => $red->id_lika, 'form'=>'forma_izmena');
+							$id_meni = array('name' => 'id_meni', 'id' => 'id_meni', 'class' => 'tb_forma_polje', 'value' => $red->id_meni, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_podmeni', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'podmeni', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -770,9 +770,9 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$podmeni_naziv = array('name' => 'tb_podmeni_naziv', 'id' => 'tb_podmeni_naziv', 'class' => 'tb_forma_polje',);
-						$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje',);
-						$id_meni = array('name' => 'tb_id_meni', 'id' => 'tb_id_meni', 'class' => 'tb_forma_polje',);
+						$podmeni_naziv = array('name' => 'podmeni_naziv', 'id' => 'podmeni_naziv', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
+						$id_lika = array('name' => 'id_lika', 'id' => 'id_lika', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
+						$id_meni = array('name' => 'id_meni', 'id' => 'id_meni', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'podmeni', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
@@ -814,8 +814,8 @@
 						if (isset($id) && $id == $red->id_slajda):
 
 							$attributes = array('id' => 'forma_izmena');
-							$putanja = array('name' => 'tb_putanja', 'id' => 'tb_putanja', 'class' => 'tb_forma_polje', 'value' => $red->putanja);
-							$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje', 'value' => $red->id_lika);
+							$putanja = array('name' => 'putanja', 'id' => 'putanja', 'class' => 'tb_forma_polje', 'value' => $red->putanja, 'form'=>'forma_izmena');
+							$id_lika = array('name' => 'id_lika', 'id' => 'id_lika', 'class' => 'tb_forma_polje', 'value' => $red->id_lika, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_slajda', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'slajd', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -882,13 +882,12 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$putanja = array('name' => 'tb_putanja', 'id' => 'tb_putanja', 'class' => 'tb_forma_polje',);
-						$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje',);
+						$putanja = array('name' => 'putanja', 'id' => 'putanja', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
+						$id_lika = array('name' => 'id_lika', 'id' => 'id_lika', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'slajd', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($putanja); ?></td>
 						<td><?php echo form_input($id_lika); ?></td>
 						<td>
@@ -923,7 +922,7 @@
 						if (isset($id) && $id == $red->id_uloga):
 
 							$attributes = array('id' => 'forma_izmena');
-							$naziv_uloge = array('name' => 'tb_naziv_uloge', 'id' => 'tb_naziv_uloge', 'class' => 'tb_forma_polje', 'value' => $red->naziv_uloge);
+							$naziv_uloge = array('name' => 'naziv_uloge', 'id' => 'naziv_uloge', 'class' => 'tb_forma_polje', 'value' => $red->naziv_uloge, 'form'=>'forma_izmena');
 							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_uloga', 'form'=>'forma_izmena','type'=>'hidden');
 							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'uloga', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
@@ -987,12 +986,11 @@
 					<tr>
 						<?php
 						$attributes = array('id' => 'forma_unos');
-						$naziv_uloge = array('name' => 'tb_naziv_uloge', 'id' => 'tb_naziv_uloge', 'class' => 'tb_forma_polje',);
+						$naziv_uloge = array('name' => 'naziv_uloge', 'id' => 'naziv_uloge', 'class' => 'tb_forma_polje', 'form'=>'forma_unos');
 						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'uloga', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($naziv_uloge); ?></td>
 						<td>
 							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
