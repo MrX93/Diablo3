@@ -9,7 +9,7 @@ class Kontakt extends Frontend_Controller {
 		$podaci['kontakt_ime'] = array('name' => 'kontakt_ime', 'id' => 'kontakt_ime');
 		$podaci['kontakt_predmet'] = array('name' => 'kontakt_predmet', 'id' => 'kontakt_predmet');
 		$podaci['kontakt_poruka'] = array('name' => 'kontakt_poruka', 'id' => 'kontakt_poruka');
-		$podaci['kontakt_posalji'] = array('name' => 'kontakt_posalji', 'id' => 'kontakt_posalji', 'value' => 'Send', 'onClick' => 'kontakt();');
+		$podaci['kontakt_posalji'] = array('name' => 'kontakt_posalji', 'id' => 'kontakt_posalji', 'value' => 'Send');
 		$podaci['kontakt_reset'] = array('name' => 'kontakt_reset', 'id' => 'reset', 'value' => 'Reset',);
 
 		$this->load->library('email');
