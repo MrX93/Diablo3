@@ -5,7 +5,7 @@ function ispisi_tabelu(tabela, id) {
 			document.getElementById('limona').innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("GET", "http://diablo3.hol.es/PHP2sajt/admin/prikazi_tabelu/" + tabela + "/" + id, true);
+	xhttp.open("GET", "http://diablo3.hol.es/admin/prikazi_tabelu/" + tabela + "/" + id, true);
 	xhttp.send();
 }
 function obrisi_red(tabela, id, prva_kolona) {
@@ -15,7 +15,7 @@ function obrisi_red(tabela, id, prva_kolona) {
 			document.getElementById('limona').innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("GET", "http://diablo3.hol.es/PHP2sajt/admin/obrisi_red/" + tabela + "/" + id + "/" + prva_kolona, true);
+	xhttp.open("GET", "http://diablo3.hol.es/admin/obrisi_red/" + tabela + "/" + id + "/" + prva_kolona, true);
 	xhttp.send();
 }
 
@@ -25,14 +25,14 @@ $(function () {
 		{
 		var	id= this.id;
 			
-			var url ="http://diablo3.hol.es/PHP2sajt/admin/izmeni_red/"+id;
+			var url ="http://diablo3.hol.es/admin/izmeni_red/"+id;
 			var data = $("#forma_izmena").serialize();
 			$.post(url, data, function (data) {
 				$("#limona").html(data);
 			});
 			
 		} else {
-			var url ="http://diablo3.hol.es/PHP2sajt/admin/dodaj_red/";
+			var url ="http://diablo3.hol.es/admin/dodaj_red/";
 			var data = $("#forma_unos").serialize();
 			$.post(url, data, function (data) {
 				$("#limona").html(data);
