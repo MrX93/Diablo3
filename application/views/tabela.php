@@ -129,6 +129,8 @@
 							$meil = array('name' => 'tb_meil', 'id' => 'tb_meil', 'class' => 'tb_forma_polje', 'value' => $red->meil);
 							$sifra = array('name' => 'tb_sifra', 'id' => 'tb_sifra', 'class' => 'tb_forma_polje', 'value' => $red->sifra);
 							$id_uloga = array('name' => 'tb_id_uloga', 'id' => 'tb_id_uloga', 'class' => 'tb_forma_polje', 'value' => $red->id_uloga);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_korisnik', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'korisnici', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -149,13 +151,15 @@
 									<td><?php echo $red->izmenio; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->id_korisnik; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('korisnici', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->id_korisnik; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->id_korisnik; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('korisnici');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
 							<?php
 							echo form_close();
@@ -198,18 +202,23 @@
 						$meil = array('name' => 'tb_meil', 'id' => 'tb_meil', 'class' => 'tb_forma_polje',);
 						$sifra = array('name' => 'tb_sifra', 'id' => 'tb_sifra', 'class' => 'tb_forma_polje',);
 						$id_uloga = array('name' => 'tb_id_uloga', 'id' => 'tb_id_uloga', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'korisnici', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($nadimak); ?></td>
 						<td><?php echo form_input($meil); ?></td>
 						<td><?php echo form_input($sifra); ?></td>
 						<td><?php echo form_input($id_uloga); ?></td>
 						<td>
-							<button id="<?php echo $red->id_korisnik; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('korisnici', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
+					</tr>
+					<?php
+					echo form_close();
+					?>
 					</tr>
 				</tbody>
 				<?php
@@ -236,6 +245,8 @@
 							$attributes = array('id' => 'forma_izmena');
 							$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje', 'value' => $red->Naziv);
 							$aktivna = array('name' => 'tb_aktivna', 'id' => 'tb_aktivna', 'class' => 'tb_forma_polje', 'value' => $red->Aktivna);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'idAnketa', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketa', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -254,13 +265,15 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->idAnketa; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('anketa', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->idAnketa; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->idAnketa; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('anketa');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
 							<?php
 							echo form_close();
@@ -299,16 +312,17 @@
 						$attributes = array('id' => 'forma_unos');
 						$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje',);
 						$aktivna = array('name' => 'tb_aktivna', 'id' => 'tb_aktivna', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketa', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($naziv); ?></td>
 						<td><?php echo form_input($aktivna); ?></td>
 						<td>
-							<button id="<?php echo $red->idAnketa; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('anketa', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
 					</tr>
 					<?php
 					echo form_close();
@@ -341,6 +355,8 @@
 							$odgovor = array('name' => 'tb_odgovor', 'id' => 'tb_odgovor', 'class' => 'tb_forma_polje', 'value' => $red->Odgovor);
 							$rezultat = array('name' => 'tb_rezultat', 'id' => 'tb_rezultat', 'class' => 'tb_forma_polje', 'value' => $red->Rezultat);
 							$id_anketa = array('name' => 'tb_id_anketa', 'id' => 'tb_id_anketa', 'class' => 'tb_forma_polje', 'value' => $red->idAnketa);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'idAnketaOdgovori', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketaodgovori', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -360,13 +376,15 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->idAnketaOdgovori; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('anketaodgovori', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->idAnketaOdgovori; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->idAnketaOdgovori; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('anketaodgovori');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
 							<?php
 							echo form_close();
@@ -407,17 +425,18 @@
 						$odgovor = array('name' => 'tb_odgovor', 'id' => 'tb_odgovor', 'class' => 'tb_forma_polje',);
 						$rezultat = array('name' => 'tb_rezultat', 'id' => 'tb_rezultat', 'class' => 'tb_forma_polje',);
 						$id_anketa = array('name' => 'tb_id_anketa', 'id' => 'tb_id_anketa', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'anketaodgovori', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($odgovor); ?></td>
 						<td><?php echo form_input($rezultat); ?></td>
 						<td><?php echo form_input($id_anketa); ?></td>
 						<td>
-							<button id="<?php echo $red->idAnketaOdgovori; ?>" name="dodaj" class="admin_dugme" onclick="ispisi_tabelu('anketaodgovori', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
 					</tr>
 					<?php
 					echo form_close();
@@ -452,6 +471,8 @@
 							$slika_lik_pocetna = array('name' => 'tb_slika_lik_pocetna', 'id' => 'tb_slika_lik_pocetna', 'class' => 'tb_forma_polje', 'value' => $red->slika_lik_pocetna);
 							$video = array('name' => 'tb_video', 'id' => 'tb_video', 'class' => 'tb_forma_polje', 'value' => $red->video);
 							$dir_za_smestanje_slika = array('name' => 'tb_dir_za_smestanje_slika', 'id' => 'tb_dir_za_smestanje_slika', 'class' => 'tb_forma_polje', 'value' => $red->dir_za_smestanje_slika);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_lika', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'likovi', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -472,15 +493,16 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->id_lika; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('likovi', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->id_lika; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->id_lika; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('likovi');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
-
 							<?php
 							echo form_close();
 						else:
@@ -522,18 +544,19 @@
 						$slika_lik_pocetna = array('name' => 'tb_slika_lik_pocetna', 'id' => 'tb_slika_lik_pocetna', 'class' => 'tb_forma_polje',);
 						$video = array('name' => 'tb_video', 'id' => 'tb_video', 'class' => 'tb_forma_polje',);
 						$dir_za_smestanje_slika = array('name' => 'tb_dir_za_smestanje_slika', 'id' => 'tb_dir_za_smestanje_slika', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'likovi', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($ime_lika); ?></td>
 						<td><?php echo form_input($slika_lik_pocetna); ?></td>
 						<td><?php echo form_input($video); ?></td>
 						<td><?php echo form_input($dir_za_smestanje_slika); ?></td>
 						<td>
-							<button id="<?php echo $red->id_lika; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('likovi', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
 					</tr>
 					<?php
 					echo form_close();
@@ -566,6 +589,8 @@
 							$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje', 'value' => $red->naziv);
 							$link = array('name' => 'tb_link', 'id' => 'tb_link', 'class' => 'tb_forma_polje', 'value' => $red->link);
 							$podmeni = array('name' => 'tb_podmeni', 'id' => 'tb_podmeni', 'class' => 'tb_forma_polje', 'value' => $red->podmeni);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_meni', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'meni', 'form'=>'forma_izmena','type'=>'hidden');					
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -585,15 +610,16 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->id_meni; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('meni', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->id_meni; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->id_meni; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('meni');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
-
 							<?php
 							echo form_close();
 						else:
@@ -633,19 +659,19 @@
 						$naziv = array('name' => 'tb_naziv', 'id' => 'tb_naziv', 'class' => 'tb_forma_polje',);
 						$link = array('name' => 'tb_link', 'id' => 'tb_link', 'class' => 'tb_forma_polje',);
 						$podmeni = array('name' => 'tb_podmeni', 'id' => 'tb_podmeni', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'meni', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
-						<td><?php ?></td>
 						<td><?php echo form_input($naziv); ?></td>
 						<td><?php echo form_input($link); ?></td>
 						<td><?php echo form_input($podmeni); ?></td>
 						<td>
-							<button id="<?php echo $red->id_meni; ?>" name="dodaj" class="admin_dugme" onclick="ispisi_tabelu('meni', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+							<?php echo form_input($tabela); ?>
 					</tr>
-
 					<?php
 					echo form_close();
 					?>
@@ -677,6 +703,8 @@
 							$podmeni_naziv = array('name' => 'tb_podmeni_naziv', 'id' => 'tb_podmeni_naziv', 'class' => 'tb_forma_polje', 'value' => $red->podmeni_naziv);
 							$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje', 'value' => $red->id_lika);
 							$id_meni = array('name' => 'tb_id_meni', 'id' => 'tb_id_meni', 'class' => 'tb_forma_polje', 'value' => $red->id_meni);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_podmeni', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'podmeni', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -696,15 +724,16 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->id_podmeni; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('podmeni', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->id_podmeni; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->id_podmeni; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('podmeni');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+									<?php echo form_input($prva_kolona); ?>
+								  <?php echo form_input($tabela); ?>
 							</tr>
-
 							<?php
 							echo form_close();
 						else:
@@ -744,6 +773,7 @@
 						$podmeni_naziv = array('name' => 'tb_podmeni_naziv', 'id' => 'tb_podmeni_naziv', 'class' => 'tb_forma_polje',);
 						$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje',);
 						$id_meni = array('name' => 'tb_id_meni', 'id' => 'tb_id_meni', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'podmeni', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
@@ -752,11 +782,11 @@
 						<td><?php echo form_input($id_lika); ?></td>
 						<td><?php echo form_input($id_meni); ?></td>
 						<td>
-							<button id="<?php echo $red->id_podmeni; ?>" name="dodaj" class="admin_dugme" onclick="ispisi_tabelu('podmeni', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
 					</tr>
-
 					<?php
 					echo form_close();
 					?>
@@ -786,6 +816,8 @@
 							$attributes = array('id' => 'forma_izmena');
 							$putanja = array('name' => 'tb_putanja', 'id' => 'tb_putanja', 'class' => 'tb_forma_polje', 'value' => $red->putanja);
 							$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje', 'value' => $red->id_lika);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_slajda', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'slajd', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -804,13 +836,15 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->id_slajda; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('slajd', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->id_slajda; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->id_slajda; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('slajd');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
 
 							<?php
@@ -850,6 +884,7 @@
 						$attributes = array('id' => 'forma_unos');
 						$putanja = array('name' => 'tb_putanja', 'id' => 'tb_putanja', 'class' => 'tb_forma_polje',);
 						$id_lika = array('name' => 'tb_id_lika', 'id' => 'tb_id_lika', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'slajd', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
@@ -857,11 +892,11 @@
 						<td><?php echo form_input($putanja); ?></td>
 						<td><?php echo form_input($id_lika); ?></td>
 						<td>
-							<button id="<?php echo $red->id_slajda; ?>" name="dodaj" class="admin_dugme" onclick="ispisi_tabelu('slajd', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
 					</tr>
-
 					<?php
 					echo form_close();
 					?>
@@ -889,6 +924,8 @@
 
 							$attributes = array('id' => 'forma_izmena');
 							$naziv_uloge = array('name' => 'tb_naziv_uloge', 'id' => 'tb_naziv_uloge', 'class' => 'tb_forma_polje', 'value' => $red->naziv_uloge);
+							$prva_kolona=array('name' => 'prva_kolona', 'id' => 'prva_kolona','value'=>'id_uloga', 'form'=>'forma_izmena','type'=>'hidden');
+							$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'uloga', 'form'=>'forma_izmena','type'=>'hidden');
 							echo form_open('', $attributes);
 							?>
 							<tr>
@@ -906,15 +943,16 @@
 									<td><?php echo $red->nadimak; ?></td>
 								<?php } ?>
 								<td>
-									<button id="<?php echo $red->id_uloga; ?>" name="izmeni" class="admin_dugme" onclick="ispisi_tabelu('uloga', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+									<button id="<?php echo $red->id_uloga; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
 								<td>
 									<button id="<?php echo $red->id_uloga; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('uloga');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
+								<?php echo form_input($prva_kolona); ?>
+								<?php echo form_input($tabela); ?>
 							</tr>
-
 							<?php
 							echo form_close();
 						else:
@@ -950,15 +988,17 @@
 						<?php
 						$attributes = array('id' => 'forma_unos');
 						$naziv_uloge = array('name' => 'tb_naziv_uloge', 'id' => 'tb_naziv_uloge', 'class' => 'tb_forma_polje',);
+						$tabela=array('name' => 'tabela', 'id' => 'tabela','value'=>'uloga', 'form'=>'forma_unos','type'=>'hidden');
 						echo form_open('', $attributes);
 						?>
 					<tr>
 						<td><?php ?></td>
 						<td><?php echo form_input($naziv_uloge); ?></td>
 						<td>
-							<button id="<?php echo $red->id_uloga; ?>" name="dodaj" class="admin_dugme" onclick="ispisi_tabelu('uloga', this.id);" ><i class="fa fa-lg fa-floppy-o"></i>
+							<button name="dodaj" class="admin_dugme"><i class="fa fa-lg fa-floppy-o"></i>
 							</button>
 						</td>
+						<?php echo form_input($tabela); ?>
 					</tr>
 					<?php
 					echo form_close();
