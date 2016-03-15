@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url'] = 'diablo3.hol.es';
+$config['base_url'] = 'http://diablo3.hol.es';
 
 function __autoload($class) {
 	if (strpos($class, 'CI_') !== 0) {
