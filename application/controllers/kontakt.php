@@ -3,7 +3,7 @@
 class Kontakt extends Frontend_Controller {
 
 	public function kontaktiraj() {
-		
+
 		$podaci['title'] = "Contact | ";
 		$podaci['kontakt_forma'] = array('name' => 'kontakt_forma');
 		$podaci['kontakt_ime'] = array('name' => 'kontakt_ime', 'id' => 'kontakt_ime');
@@ -23,14 +23,13 @@ class Kontakt extends Frontend_Controller {
 			$reEmail = 'nikola.milicevic.169.12@ict.edu.rs';
 
 			if (strlen($poruka) < 1 || strlen($tema) < 1 || !preg_match($reIme, $ime)) {
-				$podaci['nesto'] = '<p style="color:red; font-size: 25px; " > Morate popuniti sva polja.Hvala!</p>';
+;
 			} else {
 				$this->email->from('kontakt_ime');
 				$this->email->to('info@webara.com');
 				$this->email->subject('kontakt_predmet');
 				$this->email->message('kontakt_poruka');
 				$this->email->send();
-				$podaci['nesto'] = '<h4>Uspesno ste poslali poruku.Hvala!</h4>';
 			}
 		}
 

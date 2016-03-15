@@ -30,11 +30,11 @@ body
 
 #content-wrapper1{width:975px; height:auto; border:1px solid; position:relative; margin-top:17px;padding-left:50px;padding:10px 5px 10px 5px;background-color:#000;  filter:alpha(opacity=95); background-color:rgba(0,0,0,0.93); }
 
-	#first{width:142px; float:left;margin-right:1px; margin-top:85px; margin-left:60px; }
-		#second{width:170px;float:left; margin-top:68px;}
-			#third{ width:229px; float:left;margin-right:15px; margin-top:50px;}
-				#fourth	{width:155px;float:left;margin-right:-4px; margin-top:60px; }
-					#fifth{width:136px;float:left; margin-top:80px;}
+#first{width:142px; float:left;margin-right:1px; margin-top:85px; margin-left:60px; }
+#second{width:170px;float:left; margin-top:68px;}
+#third{ width:229px; float:left;margin-right:15px; margin-top:50px;}
+#fourth	{width:155px;float:left;margin-right:-4px; margin-top:60px; }
+#fifth{width:136px;float:left; margin-top:80px;}
 
 #galerija{height:auto; margin-top:6px;background-color:#000; padding:33px;background-color:#080808 ;  }			
 
@@ -149,25 +149,19 @@ input[type="radio"]:checked + label span {-webkit-transition:background-color 0.
 #limona{  width:800px;  height: auto; margin-left: 50px  }
 
 /*Kontakt*/
-#kontakt{ width:1000px;  margin-top:254px;color:#fff; background:url(../pictures/kontakt.jpg) }
-#forma{ width:800px; height:245px; left:300px; position:relative;  padding-left:30px;  color:#fff;  }
+#kontakt{ width:1000px;  margin-top:254px;color:#fff; background:url(../pictures/kontakt.jpg);text-align: center }
+#kontakt_forma{ width:800px; height:245px; left:300px; position:relative;  padding-left:30px;  color:#fff;  }
 
 #kontakt_ime{width:182px; height:23px; border:2px solid #aaa; margin-left:15px; font-family:Arial;margin-top: 15px; }
 #kontakt_predmet{width:182px; height:23px; border:2px solid #aaa; margin-left:5px;font-family:Arial; margin-top: 15px; }
-#kontakt_poruka {border-radius:4px; box-shadow:  0 0 100px 2px #000; width:332px; height:100px; margin-top:20px; border:2px solid #aaa;font-family: Arial;  transition-property:width,height; transition-duration:2s;-moz-transition-property:width,height; -moz-transition-duration:2s; -webkit-transition-property:width,height; -webkit-transition-duration:2s; -o-transition-property:width,height; -o-transition-duration:2s;}
-
-
-#forma p{margin-top:25px; font-size:25px; color:#fff;}	
-#posalji{border:2px solid #aaa; font-family:Arial;}
-#odustani{border:2px solid #aaa;font-family:Arial;}
-#e-mail-adresa:focus{border:2px solid blue;}
-#ime1:focus{border:2px solid blue;}
-#poruka:focus{border:2px solid blue; width:432px; height:160px;}
-#tema:focus{border:2px solid blue;}
+label[for=kontakt_poruka]{margin-left: 145px;}
+#kontakt_poruka {border-radius:4px;  width:332px; height:100px; margin-top:20px;  border:2px solid #aaa;font-family: Arial;  transition-property:width,height; transition-duration:2s;-moz-transition-property:width,height; -moz-transition-duration:2s; -webkit-transition-property:width,height; -webkit-transition-duration:2s; -o-transition-property:width,height; -o-transition-duration:2s;}
 #kontakt_posalji,#reset{margin-bottom:30px; border: 1px solid #000;color: #fff;background: url(../pictures/slicice/blueButtonBg.png) 50% repeat-x; padding: 5px 5px 5px 5px; cursor: pointer;   -webkit-box-shadow: inset 0 0 3px 1px #000; -moz-box-shadow: inset 0 0 3px 1px #000; box-shadow: inset 0 0 3px 1px #000;  border:2px solid #000;margin-top: 15px;}
-#forma p{margin-top:25px; font-size:25px; color:#fff;} 
-#kontakt h2{font-size:30px; color:#079CCE; margin-left:20px; margin-bottom:30px;  margin-top:20px;}
-#kontakt h4{font-size:20px; color:#079CCE; margin-left:20px; margin-bottom:30px;  margin-top:20px;}
+#kontakt_ime:focus{border:2px solid blue;}
+#kontakt_predmet:focus{border:2px solid blue;}
+#kontakt_poruka:focus{border:2px solid blue; width:432px; height:160px;}
+
+
 /*Kraj Kontakt*/
 
 #ispistabele {width:410px; height:auto;  left:260px; position:relative; padding:50px; color:#aaa;  }
@@ -214,4 +208,3 @@ img {border:0px;}
 #content-wrapper1 a:hover{text-decoration:underline;color:#0033CC;}
 #login a{text-decoration: none}
 
-	
