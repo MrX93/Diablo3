@@ -34,8 +34,8 @@ class Registracija extends Frontend_Controller {
 		if (count($greske) == 0) {
 			$data = array(
 					'nadimak' => $this->input->post('nadimak'),
-					'meil' => md5($this->input->post('rE-mail')),
-					'sifra' => $this->input->post('rsifra'),
+					'meil' =>$this->input->post('rE-mail'),
+					'sifra' =>md5($this->input->post('rsifra')),
 					'id_uloga' => '2',
 					'vreme_unosa'=>time(),
 					'korisnik_id'=>$this->session->userdata('korisnik_id')
