@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'diablophp2';
+$db['default']['hostname'] = 'mysql.hostinger.co.uk';
+$db['default']['username'] = 'u703331861_d3';
+$db['default']['password'] = 'adminadmin';
+$db['default']['database'] = 'u703331861_d3';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
