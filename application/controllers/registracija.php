@@ -37,8 +37,6 @@ class Registracija extends Frontend_Controller {
 					'meil' =>$this->input->post('rE-mail'),
 					'sifra' =>md5($this->input->post('rsifra')),
 					'id_uloga' => '2',
-					'vreme_unosa'=>time(),
-					'korisnik_id'=>$this->session->userdata('korisnik_id')
 			);
 			$this->registracija_model->registruj($data);
 			 redirect (base_url());
