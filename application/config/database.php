@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'mysql.hostinger.co.uk';
+$db['default']['hostname'] = 'diablo3.hol.es';
 $db['default']['username'] = 'u703331861_d3';
 $db['default']['password'] = 'adminadmin';
 $db['default']['database'] = 'u703331861_d3';
