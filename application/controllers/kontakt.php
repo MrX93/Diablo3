@@ -22,7 +22,7 @@ class Kontakt extends Frontend_Controller {
 			$reMeil = '/^[\S]+@[a-z]{3,8}\.[a-z]{2,4}(\.[a-z]{2,4})?$/';
 
 			if (strlen($poruka) < 1 || strlen($tema) < 1 || !preg_match($reMeil, $meil)) {
-;
+				
 			} else {
 				$this->email->from($meil);
 				$this->email->to('nikola.milicevic.169.12@ict.edu.rs');
