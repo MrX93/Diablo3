@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0">
+
+<channel>
+	<item>
+		<title>Novi nastavak serijala video igrice Diablo</title>
+		<link>http://diablo-3.comyr.com/index.html</link>
+		<author>Nikola Milićević</author>	
+		<description>Diablo 3 je pušten u prodaju u obe Amerike,Evropi,Južnoj Koreji i Tajvanu 15.05.2012.
+		a u Rusiji 07.06.2012.Igrači mogu daizaberu 5 klasa:Varvarina,Monaha,Lovca na Demone,Čarobnjaka i Vrača.</description>
+	</item>
+	
+	<item>
+		<title>Novi heroji</title>
+		<link>http://diablo-3.comyr.com/lovac.html</link>
+		<author>Nikola Milićević</author>
+		<description>U odnosu na drugi nastavak DiabloIII nam donosi dva nova heroja.Prvi je Lovac na Demone.
+		Lovac na Demone je majstor rukovanja dalekometnim oružjem neprikosnoven u ubijanju neprijatelja samostrelom,zamkama,i razarajućim eksplozivom.
+		</description>
+	</item>
+	
+	<item>
+		<title> Novi heroji </title>
+		<link>http://diablo-3.comyr.com/vrac.html</link>
+		<author>Nikola Milićević</author>
+		<description>Drugi od njih je Vrač.Vrač izvodi rituale pomoću kojih teroriše neprijatelje,i priziva zastrašujuće pratioce koji mu sluze da rastrgnu neprijatelja.
+		</description>
+	</item>
+	
+	<item>
+		<title>Nove mogucnosti za Čarobnjaka</title>
+		<link>http://diablo-3.comyr.com/carobnjak.html</link>
+		<author>Nikola Milićević</author>
+		<description>Čarobnjak  u odnosu na onog iz drugog dela igrice Diablo ima veći izbor magija, nove stvari i rune mu poboljšavaju jacinu i efikasnost magija.</description>
+	</item>
+	
+</channel>
+
+</rss>
