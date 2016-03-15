@@ -40,7 +40,7 @@
 									<button id="<?php echo $red->id_slike; ?>" name="sacuvaj_izmenu" class="admin_dugme" ><i class="fa fa-lg fa-floppy-o"></i>
 									</button>
 								</td>
-								<td>
+								 <td>
 									<button id="<?php echo $red->id_slike; ?>" name="odustani" class="admin_dugme" onclick="ispisi_tabelu('galerija');" ><i class="fa fa-lg fa-times"></i>
 									</button>
 								</td>
