@@ -7,21 +7,21 @@
 		<meta name="description" content="Diablo III je igrica koju je napravio Blizard.Jedna od najboljih RPG igara.
 					Proizvedena je 2012 i ona je treci nastavak Diablo serije." />
 		<meta name="keywords" content="Diablo"/>
-		<link rel="stylesheet" href="<?php echo $base_url; ?>css/stil-page.css" type="text/css"/>
-		<link rel="stylesheet" href="<?php echo $base_url; ?>css/colorbox.css" type="text/css"/>
+		<link rel="stylesheet" href="<?php echo $base_url; ?>/css/stil-page.css" type="text/css"/>
+		<link rel="stylesheet" href="<?php echo $base_url; ?>/css/colorbox.css" type="text/css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 		
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery-2.2.1.min.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/galerija.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/izmena.js"></script>	
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/pr_rg_an.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/meni.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/meniFiksiran.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/slideshow.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/regularniIzrazi.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/admin_panel.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/izmenaBrisanje.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery.colorbox-min.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/jquery-2.2.1.min.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/galerija.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/izmena.js"></script>	
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/pr_rg_an.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/meni.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/meniFiksiran.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/slideshow.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/regularniIzrazi.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/admin_panel.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/izmenaBrisanje.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>/js/jquery.colorbox-min.js"></script>
 			<script>
 				$(document).ready(function () {
 					$("#anketaSbt").click(function () {
