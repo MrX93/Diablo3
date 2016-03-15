@@ -19,9 +19,9 @@ class Kontakt extends Frontend_Controller {
 			$tema = $this->input->post('kontakt_predmet');
 			$poruka = $this->input->post('kontakt_poruka');
 
-			$reIme = '/^[a-z0-9\_]+$/';
+			$reMeil = '/^[\S]+@[a-z]{3,8}\.[a-z]{2,4}(\.[a-z]{2,4})?$/';
 
-			if (strlen($poruka) < 1 || strlen($tema) < 1 || !preg_match($reIme, $ime)) {
+			if (strlen($poruka) < 1 || strlen($tema) < 1 || !preg_match($meil, $reMeil)) {
 ;
 			} else {
 				$this->email->from($meil);
