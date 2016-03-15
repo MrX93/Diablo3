@@ -41,7 +41,7 @@ class Registracija extends Frontend_Controller {
 					'korisnik_id'=>$this->session->userdata('korisnik_id')
 			);
 			$this->registracija_model->registruj($data);
-			echo "Uspesno ste se registrovali!";
+			 redirect (base_url());
 		} else {
 			foreach ($greske as $g) {
 				echo $g . "</br>";
