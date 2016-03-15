@@ -15,20 +15,19 @@ class Kontakt extends Frontend_Controller {
 		$this->load->library('email');
 
 		if ($this->input->post('kontakt_posalji')) {
-			$ime = $this->input->post('kontakt_ime');
+			$meil = $this->input->post('kontakt_ime');
 			$tema = $this->input->post('kontakt_predmet');
 			$poruka = $this->input->post('kontakt_poruka');
 
 			$reIme = '/^[a-z0-9\_]+$/';
-			$reEmail = 'nikola.milicevic.169.12@ict.edu.rs';
 
 			if (strlen($poruka) < 1 || strlen($tema) < 1 || !preg_match($reIme, $ime)) {
 ;
 			} else {
-				$this->email->from('kontakt_ime');
-				$this->email->to('info@webara.com');
-				$this->email->subject('kontakt_predmet');
-				$this->email->message('kontakt_poruka');
+				$this->email->from($meil);
+				$this->email->to('nikola.milicevic.169.12@ict.edu.rs');
+				$this->email->subject($tema);
+				$this->email->message($poruka);
 				$this->email->send();
 			}
 		}

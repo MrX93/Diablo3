@@ -2,9 +2,9 @@
 	<div id="forma" >  
 		<div id="contact_form">	
 			<?php
-			echo form_open($base_url . 'kontakt/kontaktiraj', $kontakt_forma);
+			echo form_open($base_url .'kontakt/kontaktiraj', $kontakt_forma);
 
-			echo form_label('Name: ', 'kontakt_ime');
+			echo form_label('Vas e-mail: ', 'kontakt_ime');
 			echo form_input($kontakt_ime);
 			echo '<br/>';
 			echo form_label('Subject: ', 'kontakt_predmet');
