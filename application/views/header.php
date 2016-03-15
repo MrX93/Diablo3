@@ -7,8 +7,8 @@
 		<meta name="description" content="Diablo III je igrica koju je napravio Blizard.Jedna od najboljih RPG igara.
 					Proizvedena je 2012 i ona je treci nastavak Diablo serije." />
 		<meta name="keywords" content="Diablo"/>
-		<link rel="stylesheet" href="<?php echo $base_url; ?>css/stil-page.css" type="text/css"/>
-		<link rel="stylesheet" href="<?php echo $base_url; ?>css/colorbox.css" type="text/css"/>
+		<link href="<?php echo $base_url; ?>../../css/stil-page.css" rel="stylesheet" type="text/css"/>
+		<link href="<?php echo $base_url; ?>../../css/colorbox.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 		
 		<script src="<?php echo $base_url; ?>js/jquery-2.2.1.min.js"></script>
