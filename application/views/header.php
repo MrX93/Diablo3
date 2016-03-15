@@ -13,16 +13,16 @@
 		
 		<script src="<?php echo $base_url; ?>js/jquery-2.2.1.min.js"></script>
 		
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/galerija.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/izmena.js"></script>	
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/pr_rg_an.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/meni.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/meniFiksiran.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/slideshow.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/regularniIzrazi.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/admin_panel.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/izmenaBrisanje.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery.colorbox-min.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/galerija.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/izmena.js"></script>	
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/pr_rg_an.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/meni.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/meniFiksiran.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/slideshow.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/regularniIzrazi.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/admin_panel.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/izmenaBrisanje.js"></script>
+			<script type="text/javascript" src="<?php echo $base_url; ?>../js/jquery.colorbox-min.js"></script>
 			<script>
 				$(document).ready(function () {
 					$("#anketaSbt").click(function () {
