@@ -40,9 +40,9 @@
 	<?php } ?>	
 
 	<div id="stranicenje">
-			<?php
-			echo $links;
-			?>
+		<?php
+		echo $links;
+		?>
 	</div>
 </div>	
 

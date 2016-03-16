@@ -23,7 +23,7 @@ class anketa extends Frontend_Controller {
 		$response = "";
 		foreach ($rezultati as $rezultat) {
 			$procenat = ceil((100 * $rezultat->Rezultat) / $suma);
-			$response.= $rezultat->Odgovor .'<div id="progressbar" style="width:' . $procenat . '%;">' .$rezultat->Rezultat.' </div><div class="clear"> </div>';
+			$response.= $rezultat->Odgovor . '<div id="progressbar" style="width:' . $procenat . '%;">' . $rezultat->Rezultat . ' </div><div class="clear"> </div>';
 		}
 		echo json_encode($response);
 	}

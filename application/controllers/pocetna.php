@@ -14,4 +14,5 @@ class Pocetna extends Frontend_Controller {
 		$podaci['pocetna_likovi'] = $this->likovi->pocetna_likovi();
 		$this->stranica('pocetna', $podaci);
 	}
+
 }

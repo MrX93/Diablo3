@@ -1,7 +1,7 @@
-$(document).ready(function()
-{																							
-	$("#lop").click(function()
+$(document).ready(function ()
+{
+	$("#lop").click(function ()
 	{
-		$("#drop").slideToggle(350);	
+		$("#drop").slideToggle(350);
 	});
 });

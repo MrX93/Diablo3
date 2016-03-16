@@ -10,36 +10,36 @@
 		<link rel="stylesheet" href="<?php echo $base_url; ?>css/stil-page.css" type="text/css"/>
 		<link rel="stylesheet" href="<?php echo $base_url; ?>css/colorbox.css" type="text/css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-		
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery-2.2.1.min.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/galerija.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/izmena.js"></script>	
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/pr_rg_an.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/meni.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/meniFiksiran.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/slideshow.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/regularniIzrazi.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/admin_panel.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/izmenaBrisanje.js"></script>
-			<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery.colorbox-min.js"></script>
-			<script>
-				$(document).ready(function () {
-					$("#anketaSbt").click(function () {
-						var Odgovor = $("input[name=odgovor]:checked", "#form_anketa").val();
 
-						$.ajax({
-							type: "POST",
-							url: "<?php echo base_url(); ?>anketa/anketaRezultat",
-							dataType: "json",
-							data: {odgovor: Odgovor},
-							success: function (response) {
-								$('#anketaforma').text("");
-								$('#anketaforma').append(response);
-							}
-						});
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/galerija.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/izmena.js"></script>	
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/pr_rg_an.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/meni.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/meniFiksiran.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/slideshow.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/regularniIzrazi.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/admin_panel.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/izmenaBrisanje.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>js/jquery.colorbox-min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("#anketaSbt").click(function () {
+					var Odgovor = $("input[name=odgovor]:checked", "#form_anketa").val();
+
+					$.ajax({
+						type: "POST",
+						url: "<?php echo base_url(); ?>anketa/anketaRezultat",
+						dataType: "json",
+						data: {odgovor: Odgovor},
+						success: function (response) {
+							$('#anketaforma').text("");
+							$('#anketaforma').append(response);
+						}
 					});
 				});
-			</script>
+			});
+		</script>
 
 	</head>
 	<body>
@@ -120,32 +120,33 @@
 				</div>
 				<div id="anketaforma">
 
-						<?php echo form_open('', $form_anketa); ?>
+					<?php echo form_open('', $form_anketa); ?>
 
-						<?php foreach ($anketa_pitanje as $pitanje) { ?>
-							<?php echo $pitanje['Naziv']; ?> <br/>
+					<?php foreach ($anketa_pitanje as $pitanje) { ?>
+						<?php echo $pitanje['Naziv']; ?> <br/>
+						<?php
+					}
+					foreach ($anketa_odgovori as $odgovor) {
+						$radio = array('name' => 'odgovor', 'id' => $odgovor['Odgovor'], 'value' => $odgovor['idAnketaOdgovori'], 'class' => 'radio');
+						$radioC = array('name' => 'odgovor', 'id' => $odgovor['Odgovor'], 'value' => $odgovor['idAnketaOdgovori'], 'checked' => TRUE, 'class' => 'radio');
+						if ($odgovor['idAnketaOdgovori'] == 1) {
+							echo form_radio($radioC);
+							?> <label for="<?php echo $odgovor['Odgovor'];
+							?>"> <span></span> <?php echo $odgovor['Odgovor'];
+							?></label> <br/>
+							<?php
+						} else {
+							?>	
+							<?php
+							echo form_radio($radio);
+							?> <label for="<?php echo $odgovor['Odgovor'];
+							?>"><span></span> <?php echo $odgovor['Odgovor'];
+							?></label> <br/>
 						<?php
 						}
-						foreach ($anketa_odgovori as $odgovor) {
-							$radio = array('name' => 'odgovor', 'id' => $odgovor['Odgovor'], 'value' => $odgovor['idAnketaOdgovori'],'class'=>'radio');
-							$radioC = array('name' => 'odgovor', 'id' => $odgovor['Odgovor'], 'value' => $odgovor['idAnketaOdgovori'], 'checked' => TRUE,'class'=>'radio');
-							if ($odgovor['idAnketaOdgovori'] == 1) {
-								echo form_radio($radioC);
-							?> <label for="<?php	echo $odgovor['Odgovor'];
-							?>"> <span></span> <?php	echo $odgovor['Odgovor'];
-							?></label> <br/>
-								<?php
-							} else {
-								?>	
-								<?php
-								echo form_radio($radio);
-								?> <label for="<?php	echo $odgovor['Odgovor'];
-								?>"><span></span> <?php	echo $odgovor['Odgovor'];
-							?></label> <br/>
-							<?php }
-						};
-						?>
-<?php echo form_button($anketaSbt, 'Glasaj'); ?>
+					};
+					?>
+					<?php echo form_button($anketaSbt, 'Glasaj'); ?>
 
 <?php echo form_close(); ?>
 				</div>

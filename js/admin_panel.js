@@ -23,16 +23,16 @@ $(function () {
 	$(document).on("click", "button:has(.fa-floppy-o)", function () {
 		if (this.id)
 		{
-		var	id= this.id;
-			
-			var url ="http://diablo3.hol.es/admin/izmeni_red/"+id;
+			var id = this.id;
+
+			var url = "http://diablo3.hol.es/admin/izmeni_red/" + id;
 			var data = $("#forma_izmena").serialize();
 			$.post(url, data, function (data) {
 				$("#limona").html(data);
 			});
-			
+
 		} else {
-			var url ="http://diablo3.hol.es/admin/dodaj_red/";
+			var url = "http://diablo3.hol.es/admin/dodaj_red/";
 			var data = $("#forma_unos").serialize();
 			$.post(url, data, function (data) {
 				$("#limona").html(data);

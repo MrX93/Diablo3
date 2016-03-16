@@ -1,11 +1,12 @@
 <?php
+
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
 class Registracija extends Frontend_Controller {
 
 	public function registruj() {
-		$this->load -> model('registracija_model');
+		$this->load->model('registracija_model');
 
 		$user = $_POST['nadimak'];
 		$meil = $_POST['rE-mail'];
@@ -15,7 +16,7 @@ class Registracija extends Frontend_Controller {
 		$reMeil = '/^[\S]+@[a-z]{3,8}\.[a-z]{2,4}(\.[a-z]{2,4})?$/';
 		$greske = array();
 
-		
+
 
 		if ($user == "") {
 			$greske[] = "Morate uneti nadimak!!!";
@@ -34,12 +35,12 @@ class Registracija extends Frontend_Controller {
 		if (count($greske) == 0) {
 			$data = array(
 					'nadimak' => $this->input->post('nadimak'),
-					'meil' =>$this->input->post('rE-mail'),
-					'sifra' =>md5($this->input->post('rsifra')),
+					'meil' => $this->input->post('rE-mail'),
+					'sifra' => md5($this->input->post('rsifra')),
 					'id_uloga' => '2',
 			);
 			$this->registracija_model->registruj($data);
-			 redirect (base_url());
+			redirect(base_url());
 		} else {
 			foreach ($greske as $g) {
 				echo $g . "</br>";
