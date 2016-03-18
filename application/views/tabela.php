@@ -469,7 +469,7 @@
 						$attributes = array('id' => 'forma_izmena');
 						$ime_lika = array('name' => 'ime_lika', 'id' => 'ime_lika', 'class' => 'tb_forma_polje', 'value' => $red->ime_lika, 'form' => 'forma_izmena');
 						$slika_lik_pocetna = array('name' => 'slika_lik_pocetna', 'id' => 'slika_lik_pocetna', 'class' => 'tb_forma_polje', 'value' => $red->slika_lik_pocetna, 'form' => 'forma_izmena');
-						$video = array('name' => 'video', 'id' => 'video', 'class' => 'forma_polje', 'value' => $red->video, 'form' => 'forma_izmena');
+						$video = array('name' => 'video', 'id' => 'video', 'class' => 'tb_forma_polje', 'value' => $red->video, 'form' => 'forma_izmena');
 						$dir_za_smestanje_slika = array('name' => 'dir_za_smestanje_slika', 'id' => 'dir_za_smestanje_slika', 'class' => 'tb_forma_polje', 'value' => $red->dir_za_smestanje_slika, 'form' => 'forma_izmena');
 						$prva_kolona = array('name' => 'prva_kolona', 'id' => 'prva_kolona', 'value' => 'id_lika', 'form' => 'forma_izmena', 'type' => 'hidden');
 						$tabela = array('name' => 'tabela', 'id' => 'tabela', 'value' => 'likovi', 'form' => 'forma_izmena', 'type' => 'hidden');
