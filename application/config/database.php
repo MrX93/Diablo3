@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'mysql.hostinger.co.uk';
-$db['default']['username'] = 'u703331861_d3';
+$db['default']['username'] = 'u844921775_d3';
 $db['default']['password'] = 'adminadmin';
-$db['default']['database'] = 'u703331861_d3';
+$db['default']['database'] = 'u844921775_d3';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
